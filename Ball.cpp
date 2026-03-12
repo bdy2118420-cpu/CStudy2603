@@ -3,19 +3,19 @@
 
 using namespace std;
 
-void Create(int* Ball)
+void Create(int* Ball, int Size)
 {
-	for (int i = 0; i < 45; i++)
+	for (int i = 0; i < Size; i++)
 	{
 		Ball[i] = i + 1;
 	}
 }
 
 
-void Shuffle(int* Ball)
+void Shuffle(int* Ball, int Size)
 {
 	srand(time(0));
-	for (int i = 0; i < 45; i++)
+	for (int i = 0; i < Size; i++)
 	{
 		int array = 0;
 		int index = rand() % 45;
@@ -44,10 +44,10 @@ int main()
 	int* Ball = new int[Size];
 
 	//볼 번호 생성
-	Create(Ball);
+	Create(Ball, Size);
 
 	//볼 섞기
-	Shuffle(Ball);
+	Shuffle(Ball, Size);
 
 	//결과 출력
 	PrintResult(Ball);
