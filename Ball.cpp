@@ -25,11 +25,11 @@ void Shuffle(int* Ball, int Size)
 	}
 }
 
-void PrintResult(int* Ball)
+void PrintResult(int* Ball, int PickNum)
 {
 	cout << "공 뽑기 결과" << endl;
 
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < PickNum; i++)
 	{
 		cout << Ball[i] << " ";
 	}
@@ -41,6 +41,7 @@ int main()
 {
 
 	int Size = 45;
+	int PickNum = 6;
 	int* Ball = new int[Size];
 
 	//볼 번호 생성
@@ -50,7 +51,7 @@ int main()
 	Shuffle(Ball, Size);
 
 	//결과 출력
-	PrintResult(Ball);
+	PrintResult(Ball, PickNum);
 
 	delete[] Ball;
 	Ball = nullptr;
